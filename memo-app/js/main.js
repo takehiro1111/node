@@ -1,8 +1,12 @@
-console.log("app.jsの稼働開始")
+import NotesApi from "./MemoApi.js";
+import NotesView from "./NotesView.js";
+import App from './app.js'
 
-import { appendFile } from 'node:fs';
+// NotesApi.saveNote({
+//   id: 123457891,
+//   title: "更新済みの9回目のメモです",
+//   body: "JSでメモアプリの作成2",
+// });
 
-appendFile("test.txt", "data to append", (err) => {
-  if (err) throw err
-  console.log('The "data to append" was appended to file!')
-})
+const root = document.getElementById("app");
+const app = new App(root)
